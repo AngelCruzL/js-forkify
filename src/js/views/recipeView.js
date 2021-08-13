@@ -56,7 +56,7 @@ class RecipeView {
     this.#parentElement.insertAdjacentHTML('afterbegin', markup);
   }
 
-  addHandleRender(handler) {
+  addHandlerRender(handler) {
     ['hashchange', 'load'].forEach(e => window.addEventListener(e, handler));
     // window.addEventListener('hashchange', showRecipe);
     // window.addEventListener('load', showRecipe);
