@@ -4,7 +4,7 @@ import recipeView from './views/recipeView';
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 
-const showRecipe = async () => {
+const controlRecipes = async () => {
   try {
     const id = window.location.hash.slice(1);
     if (!id) return;
@@ -18,8 +18,8 @@ const showRecipe = async () => {
   }
 };
 
-['hashchange', 'load'].forEach(event =>
-  window.addEventListener(event, showRecipe)
-);
-// window.addEventListener('hashchange', showRecipe);
-// window.addEventListener('load', showRecipe);
+const init = function () {
+  recipeView.addHandleRender(controlRecipes);
+};
+
+init();
