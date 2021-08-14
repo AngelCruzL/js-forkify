@@ -44,6 +44,7 @@ export const loadSearchResults = async function (query) {
         title: recipe.title,
       };
     });
+    state.search.page = 1;
   } catch (error) {
     throw error;
   }
